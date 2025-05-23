@@ -1,6 +1,6 @@
 $schema: "1.0"
 name: "vscodeultimate-devbox"
-image: vscodeultimate
+image: /subscriptions/dd4b114f-f595-446b-b35e-524eef47db2c/resourceGroups/rg-contoso-dev-center/providers/Microsoft.Compute/galleries/contoso_dev_box_gallery/images/VSCodeUltimate
 tasks:
   - name: winget
     description: Install Visual Studio Code
