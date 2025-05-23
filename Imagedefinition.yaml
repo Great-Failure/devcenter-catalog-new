@@ -1,31 +1,31 @@
 - name: git-clone
-    parameters:
-      repositoryUrl: https://github.com/microsoft/calculator
-      directory: C:\Workspaces
-    description: Clone this repository into C:\Workspaces
-    metadata: {}
-  
-  - name: install-vs-extension
-    parameters:
-      marketplaceItemName: GitHub.copilotvs
-    description: Install GitHub Copilot
-    metadata: {}
-  
-  - name: winget
-    parameters:
-      package: git
-    description: Install a package via winget
-    metadata: {}
-  
-  - name: choco
-    parameters:
-      package: azure-functions-core-tools
-      switches: /x64
-    description: install azure functions core tools
-    metadata: {}
-  
-  - name: choco
-    parameters:
-      package: notepadplusplus
-    description: install notepad++
-    metadata: {}
+  parameters:
+    repositoryUrl: https://github.com/microsoft/calculator
+    directory: C:\Workspaces
+  description: Clone this repository into C:\Workspaces
+  metadata: {}
+
+- name: install-vs-extension
+  parameters:
+    marketplaceItemName: GitHub.copilotvs
+  description: Install GitHub Copilot
+  metadata: {}
+
+- name: winget
+  parameters:
+    package: git
+  description: Install a package via winget
+  metadata: {}
+
+- name: choco
+  parameters:
+    package: azure-functions-core-tools
+    switches: /x64
+  description: install azure functions core tools
+  metadata: {}
+
+- name: choco
+  parameters:
+    package: notepadplusplus
+  description: install notepad++
+  metadata: {}
