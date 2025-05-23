@@ -1,43 +1,24 @@
 $schema: "1.0"
-name: "vscodeultimate-devbox"
-image: microsoftvisualstudio_visualstudioplustools_vs-2022-ent-general-win11-m365-gen2
+name: "VSCodeUltimate"
+image: vscodeultimate
+description: "VSCodeUltimate"
+
 tasks:
-  - name: winget
+  - name: ~/winget
+    parameters:
+      downloadUrl: 'https://raw.githubusercontent.com/contoso-co/common-eng-sys/msft-git/dsc-configurations/common-config.dsc.yaml'
+
+  - name: ~/winget
+    description: Install AZD
+    parameters:
+      package:  Microsoft.Azd
+
+  - name: ~/winget
     description: Install Visual Studio Code
     parameters:
-      package: Microsoft.VisualStudioCode
-  
-  - name: winget
-    description: Install PowerShell Core
+      package:  Microsoft.VisualStudioCode
+
+  - name: ~/powershell
     parameters:
-      package: Microsoft.PowerShell
-  
-  - name: winget
-    description: Install Windows Terminal
-    parameters:
-      package: Microsoft.WindowsTerminal
-  
-  - name: winget
-    description: Install Git
-    parameters:
-      package: Git.Git
-  
-  - name: winget
-    description: Install .NET SDK 7
-    parameters:
-      package: Microsoft.DotNet.SDK.7
-  
-  - name: winget
-    description: Install Azure CLI
-    parameters:
-      package: Microsoft.Azure.AzureCLI
-  
-  - name: winget
-    description: Install Azure Storage Explorer
-    parameters:
-      package: Microsoft.Azure.StorageExplorer
-      
-  - name: winget
-    description: Install Node.js LTS
-    parameters:
-      package: OpenJS.NodeJS.LTS
+      command: |
+        $env:Path = [System.Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [System.Environment]::GetEnvironmentVariable('Path','User') 
